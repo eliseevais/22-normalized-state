@@ -69,7 +69,6 @@ export const postsReducer = (state = initialState, action: ActionTypes) => {
           ...state.byId,
           [action.payload.postId]: {...state.byId[action.payload.postId], text: action.payload.text}
         }
-        // items: state.items.map(i => i.id === action.payload.postId ? {...i, text: action.payload.text} : i)
       }
     }
     case "POSTS/DELETE-COMMENT-SUCCESS": {

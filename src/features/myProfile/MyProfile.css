@@ -1,0 +1,17 @@
+.Container {
+  width: 800px;
+  min-height: 160px;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+b {
+  font-size: 26px;
+  padding: 20px;
+}

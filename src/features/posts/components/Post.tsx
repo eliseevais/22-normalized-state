@@ -1,16 +1,20 @@
-import React, {ChangeEvent, MouseEventHandler, useState} from "react";
+import * as React from "react";
+import {ChangeEvent, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {updatePost} from "../posts-reducer";
 import {AppRootStateType} from "../../app/store";
 import {updateAuthor} from "../authors-reducer";
-import {addComment, deleteComment, fetchPostsComments} from "../comments-reducer";
+import {addComment, fetchPostsComments} from "../comments-reducer";
+import {Comment} from "./Comment";
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import './Post.css'
 
 export const Post: React.FC<{ postId: number }> = ({postId}) => {
 
   const post = useSelector((state: AppRootStateType) => state.posts.byId[postId]);
   const author = useSelector((state: AppRootStateType) => state.authors.byId[post.authorId]);
-
-  // const comments = useSelector((state: AppRootStateType) => state.comments)
 
   const [editModePost, setEditModePost] = useState(false);
   const [editModeAuthor, setEditModeAuthor] = useState(false);
@@ -52,66 +56,64 @@ export const Post: React.FC<{ postId: number }> = ({postId}) => {
   };
   const onClickHandlerNewComment = () => {
     dispatch(addComment(postId, newComment))
-    alert(newComment);
     setNewComment('')
   }
 
   return (
-    <div>
-      {/*<b>{author.name}</b>*/}
-      {!editModeAuthor && <b onDoubleClick={onDoubleClickHandlerAuthor}>{author.name}</b>}
-      {editModeAuthor && <textarea
-        value={name}
-        onChange={onchangeHandlerAuthor}
-        onBlur={onBlurHandlerAuthor}
-      >{name}</textarea>}
+    <div className="ContainerPost">
+      <div className="NamePostLikes">
+        <div>
+          {!editModeAuthor && <b onDoubleClick={onDoubleClickHandlerAuthor}>{author.name}</b>}
+          {editModeAuthor && <textarea
+            value={name}
+            onChange={onchangeHandlerAuthor}
+            onBlur={onBlurHandlerAuthor}
+          >{name}</textarea>}
+        </div>
 
-      <br/>
+          <p>
+            {!editModePost && <span onDoubleClick={onDoubleClickHandlerPost}>{post.text}</span>}
+            {editModePost && <textarea
+              value={text}
+              onChange={onchangeHandlerPost}
+              onBlur={onBlurHandlerPost}
+            >{text}</textarea>}
+          </p>
 
-      {!editModePost && <span onDoubleClick={onDoubleClickHandlerPost}>{post.text}</span>}
-      {editModePost && <textarea
-        value={text}
-        onChange={onchangeHandlerPost}
-        onBlur={onBlurHandlerPost}
-      >{text}</textarea>}
-
-      <br/>
-
-      likes: {post.likes}
+          <span>likes: {post.likes}</span>
+      </div>
       <hr/>
 
       Comments:
       <ul>
         {post.commentsIds.map(id => <Comment key={id} id={id} postId={postId}/>)}
-        {/*{comments.map(id => <Comment key={id} id={id} postId={postId}/>)}*/}
       </ul>
 
-      <button onClick={onClickHandlerAllComments}>all comments</button>
+      <Button variant="contained" onClick={onClickHandlerAllComments}>All comments</Button>
 
       <br/>
 
-      <textarea
-        value={newComment}
-        onChange={onchangeHandlerComment}
-      >{newComment}</textarea>
-      <button onClick={onClickHandlerNewComment}>add</button>
-      <hr/>
+      <div className="ContainerNewComment">
+        <div>
+          <Box
+            component="form"
+            sx={{'& > :not(style)': {m: 1, width: '84ch'}}}
+            noValidate
+            autoComplete="off"
+          >
+            <TextField id="outlined-basic" label="New comment" variant="outlined"
+                       value={newComment}
+                       onChange={onchangeHandlerComment}
+            >{newComment}</TextField>
+          </Box>
+
+        </div>
+        <div>
+          <Button variant="contained" onClick={onClickHandlerNewComment}>Add</Button>
+        </div>
+      </div>
+
     </div>
   )
 }
 
-const Comment: React.FC<{ id: number, postId: number }> = ({id, postId}) => {
-  const comment = useSelector((state: AppRootStateType) => state.comments.byId[id]);
-  const author = useSelector((state: AppRootStateType) => state.authors.byId[comment.authorId]);
-  const dispatch = useDispatch();
-
-  const deleteCommentHandler = ()=> {
-    dispatch(deleteComment(postId, id))
-  }
-
-  return (<li>
-      <b>{author.name}</b>: {comment.text}
-      <button onClick={deleteCommentHandler}>x</button>
-    </li>
-  )
-}

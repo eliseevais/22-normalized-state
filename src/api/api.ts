@@ -24,27 +24,27 @@ export const api = {
               id: 1,
               text: 'Hello! I like React!',
               likes: 57,
-              author: {id: 1, name: 'Irina'},
+              author: {id: 1, name: 'Irina Eliseeva'},
               lastComments: [
-                {id: 999, text: 'Nice! Me too', author: {id: 3, name: 'Katya'}},
-                {id: 998, text: 'Hm... I have not decided it yet', author: {id: 4, name: 'Victor'}},
+                {id: 999, text: 'Nice! Me too', author: {id: 3, name: 'Katya Petrova'}},
+                {id: 998, text: 'Hm... I have not decided it yet', author: {id: 4, name: 'Victor Markov'}},
               ]
             },
             {
               id: 2,
               text: 'Wow! Tell us about it some more information, please.',
               likes: 13,
-              author: {id: 2, name: 'Valera'},
+              author: {id: 2, name: 'Valera Netrebko'},
               lastComments: []
             },
             {
               id: 3,
               text: 'React is a library, based on Java script. It optimized rendering page and so computer resource.',
               likes: 57,
-              author: {id: 1, name: 'Irina'},
+              author: {id: 1, name: 'Irina Eliseeva'},
               lastComments: [
-                {id: 888, text: 'Thank you for explanations', author: {id: 2, name: 'Valera'}},
-                {id: 887, text: 'I will try it next time again', author: {id: 4, name: 'Victor'}},
+                {id: 888, text: 'Thank you for explanations', author: {id: 2, name: 'Valera Netrebko'}},
+                {id: 887, text: 'I will try it next time again', author: {id: 4, name: 'Victor Markov'}},
               ]
             }
           ])
@@ -57,10 +57,10 @@ export const api = {
   },
   getComments(postId: number) {
     return Promise.resolve([
-      {id: 888, text: 'Thank you for explanations', author: {id: 2, name: 'Valera'}},
-      {id: 887, text: 'I will try it next time again', author: {id: 4, name: 'Victor'}},
-      {id: 886, text: 'Java script is cool language', author: {id: 5, name: 'Marina'}},
-      {id: 885, text: 'I like Java script', author: {id: 5, name: 'Marina'}},
+      {id: 888, text: 'Thank you for explanations', author: {id: 2, name: 'Valera Netrebko'}},
+      {id: 887, text: 'I will try it next time again', author: {id: 4, name: 'Victor Markov'}},
+      {id: 886, text: 'Java script is cool language', author: {id: 5, name: 'Elena Gorshova'}},
+      {id: 885, text: 'I like Java script', author: {id: 5, name: 'Elena Gorshova'}},
     ])
   },
   updateAuthor(authorId: number, name: string) {
