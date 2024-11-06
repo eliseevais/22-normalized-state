@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/22-normalized-state/static/css/main.15bf5013.css",
+    "main.js": "/22-normalized-state/static/js/main.67fb351c.js",
+    "static/js/453.28abdb09.chunk.js": "/22-normalized-state/static/js/453.28abdb09.chunk.js",
+    "static/media/avatarIrina.jpg": "/22-normalized-state/static/media/avatarIrina.d2b911384534cab7a6d9.jpg",
+    "index.html": "/22-normalized-state/index.html",
+    "main.15bf5013.css.map": "/22-normalized-state/static/css/main.15bf5013.css.map",
+    "main.67fb351c.js.map": "/22-normalized-state/static/js/main.67fb351c.js.map",
+    "453.28abdb09.chunk.js.map": "/22-normalized-state/static/js/453.28abdb09.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.15bf5013.css",
+    "static/js/main.67fb351c.js"
+  ]
+}
