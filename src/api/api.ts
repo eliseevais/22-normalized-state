@@ -46,7 +46,16 @@ export const api = {
                 {id: 888, text: 'Thank you for explanations', author: {id: 2, name: 'Valera Netrebko'}},
                 {id: 887, text: 'I will try it next time again', author: {id: 4, name: 'Victor Markov'}},
               ]
-            }
+            },
+            {
+              id: 4,
+              text: 'I like Angular',
+              likes: 10,
+              author: {id: 1, name: 'Irina Eliseeva'},
+              lastComments: [
+                {id: 777, text: 'Wow', author: {id: 2, name: 'Valera Netrebko'}},
+              ]
+            },
           ])
         }
         , 2000)

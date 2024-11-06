@@ -45,8 +45,8 @@ export const authorsReducer = (state = initialState, action: ActionTypes): State
         }
       }
     }
+    default: return state
   }
-  return state
 };
 
 // action creators

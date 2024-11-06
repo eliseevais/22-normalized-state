@@ -1,5 +1,5 @@
 .Container {
-  width: 800px;
+  width: 1008px;
   min-height: 160px;
   background-color: #fff;
   border-radius: 16px;
@@ -8,10 +8,9 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 16px;
+  margin: 0 26px 8px 26px;
+  box-sizing: border-box;
 }
 
-b {
-  font-size: 26px;
-  padding: 20px;
+.NameProfile {
 }

@@ -1,9 +1,10 @@
 .ContainerPost {
-  width: 800px;
+  box-sizing: border-box;
+  width: 496px;
   background-color: #fff;
   border-radius: 16px;
   padding: 20px;
-  margin-bottom: 16px;
+  margin: 8px;
 }
 
 .NamePostLikes {
@@ -13,10 +14,34 @@
   align-items: center;
 }
 
+.NameInPost {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  padding-right: 0;
+}
+
+.TextPost {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.LikesPost {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.CommentsChapter {
+  margin-bottom: 8px;
+}
+
 .ContainerNewComment {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 16px;
 }

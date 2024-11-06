@@ -15,9 +15,11 @@ export const Comment: React.FC<{ id: number, postId: number }> = ({id, postId}) 
   }
 
   return (<li className="ContainerComment">
-      <h3>{author.name}:</h3>
-      <p>{comment.text}</p>
-      <Button onClick={deleteCommentHandler} variant="contained">Delete</Button>
+      <div className="NameInPost">{author.name}:</div>
+      <p className="TextPost">{comment.text}</p>
+      <div>
+        <Button onClick={deleteCommentHandler} variant="contained" size="small">Delete</Button>
+      </div>
     </li>
   )
 }

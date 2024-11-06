@@ -1,2 +1,5 @@
 .ContainerPostPage {
+  max-width: 1024px;
+  display: flex;
+  flex-wrap: wrap;
 }

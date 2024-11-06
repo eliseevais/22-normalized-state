@@ -62,8 +62,8 @@ export const Post: React.FC<{ postId: number }> = ({postId}) => {
   return (
     <div className="ContainerPost">
       <div className="NamePostLikes">
-        <div>
-          {!editModeAuthor && <b onDoubleClick={onDoubleClickHandlerAuthor}>{author.name}</b>}
+        <div className="NameInPost">
+          {!editModeAuthor && <b onDoubleClick={onDoubleClickHandlerAuthor}>{author.name}:</b>}
           {editModeAuthor && <textarea
             value={name}
             onChange={onchangeHandlerAuthor}
@@ -71,7 +71,7 @@ export const Post: React.FC<{ postId: number }> = ({postId}) => {
           >{name}</textarea>}
         </div>
 
-          <p>
+          <p className="TextPost">
             {!editModePost && <span onDoubleClick={onDoubleClickHandlerPost}>{post.text}</span>}
             {editModePost && <textarea
               value={text}
@@ -80,16 +80,18 @@ export const Post: React.FC<{ postId: number }> = ({postId}) => {
             >{text}</textarea>}
           </p>
 
-          <span>likes: {post.likes}</span>
+          <span className="LikesPost">likes: {post.likes}</span>
       </div>
       <hr/>
 
-      Comments:
-      <ul>
+      <div className="CommentsChapter">Comments</div>
+      <div className="ListComments">
         {post.commentsIds.map(id => <Comment key={id} id={id} postId={postId}/>)}
-      </ul>
+      </div>
 
-      <Button variant="contained" onClick={onClickHandlerAllComments}>All comments</Button>
+      <div>
+        <Button variant="contained" onClick={onClickHandlerAllComments} size="small">All comments</Button>
+      </div>
 
       <br/>
 
@@ -97,19 +99,20 @@ export const Post: React.FC<{ postId: number }> = ({postId}) => {
         <div>
           <Box
             component="form"
-            sx={{'& > :not(style)': {m: 1, width: '84ch'}}}
+            sx={{'& > :not(style)': {m: 1, width: '45ch'}}}
             noValidate
             autoComplete="off"
           >
             <TextField id="outlined-basic" label="New comment" variant="outlined"
                        value={newComment}
                        onChange={onchangeHandlerComment}
+                       size="small"
             >{newComment}</TextField>
           </Box>
 
         </div>
         <div>
-          <Button variant="contained" onClick={onClickHandlerNewComment}>Add</Button>
+          <Button variant="contained" onClick={onClickHandlerNewComment} size="small">Add</Button>
         </div>
       </div>
 

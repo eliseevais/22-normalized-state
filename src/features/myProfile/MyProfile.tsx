@@ -12,9 +12,10 @@ export const MyProfile = () => {
           alt="Remy Sharp"
           src={avatarIrina}
           sx={{width: 160, height: 160}}
+          style={{marginRight: 20}}
         />
       </Stack>
-      <b>Irina Eliseeva</b>
+      <h2 className="NameProfile">Irina Eliseeva</h2>
     </div>
   )
 }
