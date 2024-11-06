@@ -6,7 +6,7 @@ export type CommentAPIType = {
   id: number,
   text: string
   author: AuthorAPIType
-}
+};
 export type PostAPIType = {
   id: number,
   text: string,
@@ -81,4 +81,4 @@ export const api = {
   addComment(postId: number, text: string) {
     return Promise.resolve({})
   }
-}
+};

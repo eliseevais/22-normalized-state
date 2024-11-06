@@ -1,12 +1,12 @@
-import './MyProfile.css';
+import './profileDescription.css';
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-import avatarIrina from '../../assets/avatarIrina.jpg'
+import avatarIrina from '../../assets/avatarIrina.jpg';
 
-export const MyProfile = () => {
+export const ProfileDescription = () => {
   return (
-    <div className="Container">
+    <div className="ContainerProfile">
       <Stack direction="row" spacing={2}>
         <Avatar
           alt="Remy Sharp"
@@ -18,4 +18,4 @@ export const MyProfile = () => {
       <h2 className="NameProfile">Irina Eliseeva</h2>
     </div>
   )
-}
+};

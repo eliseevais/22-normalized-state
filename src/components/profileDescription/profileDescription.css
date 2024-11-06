@@ -1,15 +1,17 @@
-.Container {
+.ContainerProfile {
   width: 1008px;
   min-height: 160px;
-  background-color: #fff;
-  border-radius: 16px;
-  padding: 20px;
+
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin: 0 26px 8px 26px;
   box-sizing: border-box;
+
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 0 26px 8px 26px;
 }
 
 .NameProfile {

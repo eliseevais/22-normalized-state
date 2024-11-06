@@ -1,4 +1,4 @@
-import {api, AuthorAPIType} from "../../api/api";
+import {api, AuthorAPIType} from "../../../api/api";
 import {fetchPostsSuccess, mapToLookUpTable} from "./posts-reducer";
 import {Dispatch} from "redux";
 import {fetchPostCommentsSuccess} from "./comments-reducer";

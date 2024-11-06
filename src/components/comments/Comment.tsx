@@ -1,9 +1,9 @@
 import {useDispatch, useSelector} from "react-redux";
-import {AppRootStateType} from "../../app/store";
-import {deleteComment} from "../comments-reducer";
+import {AppRootStateType} from "../../features/application/store";
+import {deleteComment} from "../postWall/posts/comments-reducer";
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import './Comment.css'
+import './Comment.css';
 
 export const Comment: React.FC<{ id: number, postId: number }> = ({id, postId}) => {
   const comment = useSelector((state: AppRootStateType) => state.comments.byId[id]);
@@ -12,14 +12,14 @@ export const Comment: React.FC<{ id: number, postId: number }> = ({id, postId}) 
 
   const deleteCommentHandler = () => {
     dispatch(deleteComment(postId, id))
-  }
+  };
 
   return (<li className="ContainerComment">
       <div className="NameInPost">{author.name}:</div>
       <p className="TextPost">{comment.text}</p>
       <div>
-        <Button onClick={deleteCommentHandler} variant="contained" size="small">Delete</Button>
+        <Button onClick={deleteCommentHandler} variant="outlined" size="small">Delete</Button>
       </div>
     </li>
   )
-}
+};

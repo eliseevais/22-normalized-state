@@ -1,8 +1,8 @@
 import {applyMiddleware, combineReducers, legacy_createStore} from 'redux';
-import {postsReducer} from "../posts/posts-reducer";
+import {postsReducer} from "../../components/postWall/posts/posts-reducer";
 import thunkMiddleware from "redux-thunk";
-import {authorsReducer} from "../posts/authors-reducer";
-import {commentsReducer} from "../posts/comments-reducer";
+import {authorsReducer} from "../../components/postWall/posts/authors-reducer";
+import {commentsReducer} from "../../components/postWall/posts/comments-reducer";
 
 const rootReducer = combineReducers({
   posts: postsReducer,

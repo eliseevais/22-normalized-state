@@ -1,4 +1,4 @@
-import {api, PostAPIType} from "../../api/api";
+import {api, PostAPIType} from "../../../api/api";
 import {Dispatch} from "redux";
 import {addCommentSuccess, CommentType, deleteCommentSuccess, fetchPostCommentsSuccess} from "./comments-reducer";
 
@@ -102,7 +102,7 @@ export const postsReducer = (state = initialState, action: ActionTypes) => {
       };
     default: return state
   }
-}
+};
 
 // action creators
 export const fetchPostsSuccess = (posts: PostAPIType[]) => (

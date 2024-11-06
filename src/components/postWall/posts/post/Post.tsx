@@ -2,10 +2,10 @@ import * as React from "react";
 import {ChangeEvent, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {updatePost} from "../posts-reducer";
-import {AppRootStateType} from "../../app/store";
+import {AppRootStateType} from "../../../../features/application/store";
 import {updateAuthor} from "../authors-reducer";
 import {addComment, fetchPostsComments} from "../comments-reducer";
-import {Comment} from "./Comment";
+import {Comment} from "../../../comments/Comment";
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -57,7 +57,7 @@ export const Post: React.FC<{ postId: number }> = ({postId}) => {
   const onClickHandlerNewComment = () => {
     dispatch(addComment(postId, newComment))
     setNewComment('')
-  }
+  };
 
   return (
     <div className="ContainerPost">
@@ -90,7 +90,7 @@ export const Post: React.FC<{ postId: number }> = ({postId}) => {
       </div>
 
       <div>
-        <Button variant="contained" onClick={onClickHandlerAllComments} size="small">All comments</Button>
+        <Button variant="outlined" onClick={onClickHandlerAllComments} size="small">All comments</Button>
       </div>
 
       <br/>
@@ -103,20 +103,23 @@ export const Post: React.FC<{ postId: number }> = ({postId}) => {
             noValidate
             autoComplete="off"
           >
-            <TextField id="outlined-basic" label="New comment" variant="outlined"
-                       value={newComment}
-                       onChange={onchangeHandlerComment}
-                       size="small"
+            <TextField
+              id="outlined-textarea"
+              multiline
+              label="New comment"
+              placeholder="New comment"
+              value={newComment}
+              onChange={onchangeHandlerComment}
+              size="small"
             >{newComment}</TextField>
           </Box>
 
         </div>
         <div>
-          <Button variant="contained" onClick={onClickHandlerNewComment} size="small">Add</Button>
+          <Button variant="outlined" onClick={onClickHandlerNewComment} size="small">Add</Button>
         </div>
       </div>
 
     </div>
   )
-}
-
+};
