@@ -1,7 +1,7 @@
 {
   "name": "22-normalized-state",
   "version": "0.1.0",
-  "homepage": "https://github.com/eliseevais/1-4-todolist-5-sprint/",
+  "homepage": "https://eliseevais.github.io/22-normalized-state/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.13.3",
